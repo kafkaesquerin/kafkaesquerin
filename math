@@ -1,0 +1,22 @@
+import math
+
+# Constants
+T_half = 4.5e9 * 365.24 * 24 * 3600  # half-life in seconds
+ln2 = math.log(2)
+lambda_decay = ln2 / T_half  # Decay constant
+N_A = 6.022e23  # Avogadro's number
+molar_mass_U238 = 238  # g/mol
+
+# Given
+activity_R = 42000  # Bq
+
+# Calculate number of uranium atoms (N)
+N = activity_R / lambda_decay
+
+# Calculate moles of uranium
+moles_uranium = N / N_A
+
+# Calculate mass of uranium in grams
+mass_uranium = moles_uranium * molar_mass_U238
+mass_uranium
+
